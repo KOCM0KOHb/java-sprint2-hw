@@ -1,11 +1,11 @@
 public class YearRecord {
-    int months = 0;
-    int amounts = 0;
-    boolean isExp = false;
+    int month = 0;
+    int amount = 0;
+    boolean isExpense;
 
-    public YearRecord(int months, int amounts, boolean isExp) {
-        this.months = months;
-        this.amounts = amounts;
-        this.isExp = isExp;
+    public YearRecord(int month, int amount, boolean isExpense) {
+        this.month = month;
+        this.amount = amount;
+        this.isExpense = isExpense;
     }
 }

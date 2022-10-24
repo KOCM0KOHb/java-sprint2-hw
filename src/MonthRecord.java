@@ -1,6 +1,6 @@
 public class MonthRecord {
     String itemNames = " ";
-    boolean isExpenses = false;
+    boolean isExpenses;
     int quantity = 0;
     int sumOfOne = 0;
 

@@ -36,7 +36,7 @@ public class Main {
         }
     }
 
-    public static void printMenu() {
+    private static void printMenu() {
         System.out.println("Сделайте выбор: ");
         System.out.println("1. Считать все месячные отчёты.");
         System.out.println("2. Считать годовой отчёт.");

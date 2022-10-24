@@ -26,8 +26,8 @@ public class YearlyReport {
 
     Integer getExpense(int month) {
         for (YearRecord yearRecord : YearRecs) {
-            if ((yearRecord.months == month) && (yearRecord.isExp)) {
-                return yearRecord.amounts;
+            if ((yearRecord.month == month) && (yearRecord.isExpense)) {
+                return yearRecord.amount;
             }
         }
         return null;
@@ -35,8 +35,8 @@ public class YearlyReport {
 
     Integer getIncome(int month) {
         for (YearRecord forYearRec : YearRecs) {
-            if ((forYearRec.months == month) && (!forYearRec.isExp)) {
-                return forYearRec.amounts;
+            if ((forYearRec.month == month) && (!forYearRec.isExpense)) {
+                return forYearRec.amount;
             }
         }
         return null;
@@ -44,15 +44,15 @@ public class YearlyReport {
 
     public void toAverYearRep() {
         if (YearRecs.isEmpty()) {
-            System.out.println("Считайте данные из отчётов!");
+            System.out.println("Годовой отчёт не загружен!");
         } else {
             int averageInc = 0;
             int averageExp = 0;
             for (YearRecord reportCompare : YearRecs) {
-                if (!reportCompare.isExp) {
-                    averageInc += reportCompare.amounts / 3;
+                if (!reportCompare.isExpense) {
+                    averageInc += reportCompare.amount / 3;
                 } else {
-                    averageExp += reportCompare.amounts / 3;
+                    averageExp += reportCompare.amount / 3;
                 }
             }
             System.out.println("Средний расход составляет: " + averageExp + "\n" + "Средний доход составляет: " + averageInc);
@@ -60,10 +60,14 @@ public class YearlyReport {
     }
 
     public void monthReport() {
-        int moneyProfit;
-        for (int i = 1; i < 4; i++) {
-            moneyProfit = getIncome(i) - getExpense(i);
-            System.out.println("Прибыль за " + MonthsName.toGetNameOfMonth(i) + " месяц составила: " + moneyProfit);
+        if (YearRecs.isEmpty()) {
+            System.out.println("Месячный отчёт не загружен!");
+        } else {
+            int moneyProfit;
+            for (int i = 1; i < 4; i++) {
+                moneyProfit = getIncome(i) - getExpense(i);
+                System.out.println("Прибыль за " + MonthsName.toGetNameOfMonth(i) + " месяц составила: " + moneyProfit);
+            }
         }
     }
 
