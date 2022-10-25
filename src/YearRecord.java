@@ -1,6 +1,6 @@
 public class YearRecord {
-    int month = 0;
-    int amount = 0;
+    int month;
+    int amount;
     boolean isExpense;
 
     public YearRecord(int month, int amount, boolean isExpense) {

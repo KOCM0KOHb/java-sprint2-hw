@@ -1,8 +1,8 @@
 public class MonthRecord {
-    String itemNames = " ";
+    String itemNames;
     boolean isExpenses;
-    int quantity = 0;
-    int sumOfOne = 0;
+    int quantity;
+    int sumOfOne;
 
     public MonthRecord(String itemNames, boolean isExpenses, int quantity, int sumOfOne) {
         this.itemNames = itemNames;

@@ -61,7 +61,7 @@ public class YearlyReport {
 
     public void monthReport() {
         if (YearRecs.isEmpty()) {
-            System.out.println("Месячный отчёт не загружен!");
+            //return;
         } else {
             int moneyProfit;
             for (int i = 1; i < 4; i++) {
